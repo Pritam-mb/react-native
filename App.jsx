@@ -25,6 +25,10 @@ const App = () => {
   );
 };
 
+const press =()=>{
+  
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
