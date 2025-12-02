@@ -1,25 +1,66 @@
-import React from "react";
-import { Image, StyleSheet, Text, View, Button } from "react-native";
+import React, { JSX } from "react";
+import { Image, StyleSheet, Text, View, Button,SafeAreaView,Alert ,useColorScheme} from "react-native";
 
-const App = () => {
+const App = ():JSX.Element => {
+  const isdark = useColorScheme() === 'light';
   return (
-    <View style={styles.container}>
-      <Text>Welcome to React Native with TypeScript!</Text>
-      <Image 
-      style={{width: 200, height: 200}}
-      source={{uri: "https://tse1.mm.bing.net/th?id=OIF.if6yS7nj%2fx%2bZlLCs3FBEqA&pid=Api&P=0&h=180"}}></Image>
-      <Button title="press me"></Button>
-      
-    </View>
-  );
-};
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Text style={[isdark ? styles.white : styles.black, styles.header]}>Hello, World!</Text>
+      </View>
 
+      {/* <View style={styles.header}>
+        <Image
+          source={{ uri: "https://reactnative.dev/img/tiny_logo.png" }}
+          style={styles.logo}
+        />
+        <Text style={styles.title}>Welcome to React Native!</Text>
+      </View>
+      <View style={styles.content}>
+        <Text style={styles.description}>
+          This is a simple React Native application.
+        </Text>
+        <Button title="Click Me" onPress={() => Alert.alert("Button Pressed!")} />
+      </View> */}
+    </SafeAreaView>
+  );
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#000',
+    alignItems: "center", //flex-end
     justifyContent: "center",
-    alignItems: "center",
   },
+  header: {
+    fontSize: 48,
+    fontWeight: "300",
+    fontFamily: 'poppins',
+  },
+  logo: {
+    width: 64,
+    height: 64,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "600",
+    marginTop: 10,
+    fontFamily: 'System',
+  },
+  content: {
+    marginTop: 30,
+    paddingHorizontal: 20,
+  },
+  description: {
+    fontSize: 16,
+    marginBottom: 20,
+  },
+  white:{
+    color:'white'
+  },
+  black:{
+    color:'black'
+  }
 });
 
 export default App;
