@@ -1,45 +1,44 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import { View, Text, SafeAreaView, ScrollView, useColorScheme, StyleSheet } from 'react-native'
+import React from 'react'
+import Flatcard from './components/Flatcard'
+import Elevetdcards from './components/Elevetdcards';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+const App = () => {
+  const arrey = ['red','blue','green','yellow','black'];
+   const isdark = useColorScheme() === 'light'; //
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
-  );
-}
-
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
+  const styles = StyleSheet.create({
+    font:{
+      fontSize:25,
+      fontWeight:'600',
+      marginTop:30,
+      color: isdark ? 'white' : 'black'
+    },
+    container:{
+      flex:1,
+      backgroundColor: '#000',
+      
+      // backgroundColor: isdark ? 'black' : 'white',
+      
+    }
+  })
 
   return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
-    </View>
-  );
+    <SafeAreaView style={styles.container}>
+      <ScrollView >
+
+      {/* <Text>App hello</Text> */}
+        <Text style={styles.font}>hello</Text>
+        <View style={{flexDirection:'row'}}>
+
+        {arrey.map((color, index) => (
+          <Flatcard key={index} color={color} />
+        ))}
+        </View>
+        <Elevetdcards/>
+        </ScrollView>
+    </SafeAreaView>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-export default App;
+export default App
