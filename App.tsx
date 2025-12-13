@@ -2,11 +2,11 @@ import React, { JSX } from "react";
 import { Image, StyleSheet, Text, View, Button,SafeAreaView,Alert ,useColorScheme} from "react-native";
 
 const App = ():JSX.Element => {
-  const isdark = useColorScheme() === 'light';
+  const isdark = useColorScheme() === 'dark'; //
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <Text style={[isdark ? styles.white : styles.black, styles.header]}>Hello, World!</Text>
+        <Text style={[isdark ? styles.white : styles.black, styles.header]}>Hello, World! </Text>
       </View>
 
       {/* <View style={styles.header}>
@@ -28,7 +28,7 @@ const App = ():JSX.Element => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000',
+    // backgroundColor: '#000',
     alignItems: "center", //flex-end
     justifyContent: "center",
   },
