@@ -73,3 +73,48 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# TypeScript
+*.tsbuildinfo
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Editor directories and files
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+logs
+*.log
+
+# Android build outputs
+android/app/build/
+android/app/release/
+android/.gradle/
+android/build/
+
+# iOS build outputs
+ios/build/
+ios/Pods/
+
+# React Native
+.expo/
+.expo-shared/
+
+# Misc
+*.pem
+.DS_Store
+Thumbs.db
